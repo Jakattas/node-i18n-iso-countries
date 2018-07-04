@@ -1,24 +1,25 @@
-[![Build Status](https://secure.travis-ci.org/michaelwittig/node-i18n-iso-countries.png)](http://travis-ci.org/michaelwittig/node-i18n-iso-countries)
-[![NPM version](https://badge.fury.io/js/i18n-iso-countries.png)](http://badge.fury.io/js/i18n-iso-countries)
+# i18n-iso-countries-withCat
 
-# i18n-iso-countries
+This is a fork project i18n-iso-countries created by Andreas Wittig
+
+A project with Catalonia as a Country with Iso CT and CAT.
 
 i18n for ISO 3166-1 country codes. We support Alpha-2, Alpha-3 and Numeric codes from http://en.wikipedia.org/wiki/ISO_3166-1#Officially_assigned_code_elements
 
 ## Installing
 
-Install it using npm: `npm install i18n-iso-countries`
+Install it using npm: `npm install i18n-iso-countries-withCat`
 
 This library requires that [String#padStart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart) is available. If your environment does not support this method, you will need to [polyfill](https://www.npmjs.com/package/core-js) it.
 
 If used in a browser environment, you will need to manually install the local you wish to support.
 
 ```javascript
-var countries = require("i18n-iso-countries");
+var countries = require("i18n-iso-countries-withCat");
 
 // Support french & english languages.
-countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
-countries.registerLocale(require("i18n-iso-countries/langs/fr.json"));
+countries.registerLocale(require("i18n-iso-countries-withCat/langs/en.json"));
+countries.registerLocale(require("i18n-iso-countries-withCat/langs/fr.json"));
 ```
 
 ## Code to Country
@@ -42,51 +43,18 @@ console.log(countries.getNames("en")); // { 'AF': 'Afghanistan', 'AL': 'Albania'
 
 ### Supported languages (ISO 639-1)
 
-* `ar`: Arabic
-* `az`: Azerbaijani
-* `be`: Belorussian
-* `bg`: Bulgarian
-* `bs`: Bosnian
 * `ca`: Catalan
-* `cs`: Czech
 * `da`: Danish
 * `de`: German
 * `en`: English
 * `es`: Spanish
-* `et`: Estonian
-* `fa`: Persian
-* `fi`: Finnish
 * `fr`: French
-* `el`: Greek
-* `he`: Hebrew
-* `hr`: Croatian
-* `hu`: Hungarian
-* `hy`: Armenian
 * `it`: Italian
-* `id`: Indonesian
 * `ja`: Japanese
-* `ka`: Georgian
-* `kk`: Kazakh
 * `ko`: Korean
-* `ky`: Kyrgyz
-* `lt`: Lithuanian
-* `lv`: Latvian
-* `mk`: Macedonian
-* `mn`: Mongolian
-* `nb`: Norwegian Bokmål
-* `nl`: Dutch
-* `nn`: Norwegian Nynorsk
 * `pl`: Polish
 * `pt`: Portuguese
-* `ro`: Romanian
 * `ru`: Russian
-* `sk`: Slovak
-* `sl`: Slovene
-* `sr`: Serbian
-* `sv`: Swedish
-* `tr`: Turkish
-* `uk`: Ukrainian
-* `uz`: Uzbek
 * `zh`: Chinese
 
 [List of ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)

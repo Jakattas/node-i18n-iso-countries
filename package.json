@@ -1,9 +1,10 @@
 {
-  "name": "i18n-iso-countries",
-  "version": "3.3.0",
-  "description": "i18n for ISO 3166-1 country codes",
+  "name": "i18n-iso-countries-withCat",
+  "version": "1.0.0",
+  "description": "i18n for ISO 3166-1 country codes with Catalonia as country",
   "typings": "index.d.js",
   "keywords": [
+    "Catalunya as country",
     "i18n",
     "iso",
     "3166",
@@ -22,6 +23,7 @@
     "bs",
     "ca",
     "cs",
+    "ct",
     "da",
     "de",
     "el",
@@ -65,23 +67,12 @@
     "zh"
   ],
   "author": {
-    "name": "Andreas Wittig",
-    "email": "me@andreaswittig.info"
+    "name": "Jakattas"
   },
-  "contributors": [
-    {
-      "name": "Michael Wittig",
-      "email": "post@michaelwittig.info"
-    },
-    {
-      "name": "Bedis ElAcheche",
-      "email": "d4rk-5c0rp@ubuntu.com"
-    }
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/michaelwittig/node-i18n-iso-countries.git"
+    "url": "https://github.com/jakattas/node-i18n-iso-countries.git"
   },
   "dependencies": {},
   "devDependencies": {
@@ -102,6 +93,6 @@
     "test": "make test"
   },
   "bugs": {
-    "url": "https://github.com/michaelwittig/node-i18n-iso-countries/issues"
+    "url": "https://github.com/jakattas/node-i18n-iso-countries/issues"
   }
 }
