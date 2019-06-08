@@ -1,6 +1,6 @@
 # countries-list-cat
 
-This is a fork project countries-list-cat created by Andreas Wittig
+This is a fork project node-i18n-iso-countries created by Andreas Wittig
 
 A project with Catalonia as a Country with Iso CT and CAT.
 
@@ -57,6 +57,8 @@ console.log(countries.getNames("en")); // { 'AF': 'Afghanistan', 'AL': 'Albania'
 * `ru`: Russian
 * `zh`: Chinese
 * `eu`: Euskera
+* `gl`: Galego
+
 
 
 [List of ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
