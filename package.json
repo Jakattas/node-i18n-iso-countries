@@ -1,6 +1,6 @@
 {
   "name": "countries-list-cat",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "i18n for ISO 3166-1 country codes with Catalonia as country",
   "keywords": [
     "Catalunya as country",
@@ -25,14 +25,14 @@
     "type": "git",
     "url": "https://github.com/jakattas/node-i18n-iso-countries.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "diacritics": "^1.3.0"
+  },
   "devDependencies": {
     "assert-plus": "1.0.0",
     "mocha": "4.0.1",
-    "core-js": "2.5.1",
-    "jshint": "2.9.5",
-    "madge": "2.2.0",
-    "npmedge": "0.2.2",
+    "jshint": "2.10.2",
+    "madge": "3.4.4",
     "istanbul": "0.4.5"
   },
   "main": "entry-node",

@@ -1,6 +1,7 @@
 "use strict";
 
 var codes = require("./codes.json");
+var removeDiacritics = require('diacritics').remove;
 var registeredLocales = {};
 
 /*
@@ -20,7 +21,7 @@ codes.forEach(function(codeInformation) {
 });
 
 function formatNumericCode(code) {
-  return String(code).padStart(3, "0");
+  return String('000'+(code ? code : '')).slice(-3);
 }
 
 function registerLocale(localeData) {
@@ -187,6 +188,27 @@ exports.getAlpha2Code = function(name, lang) {
 };
 
 /*
+ * @param name name
+ * @param lang language for country name
+ * @return ISO 3166-1 alpha-2 or undefined
+ */
+exports.getSimpleAlpha2Code = function(name, lang) {
+  try {
+    var p, codenames = registeredLocales[lang.toLowerCase()];
+    for (p in codenames) {
+      if (codenames.hasOwnProperty(p)) {
+        if (removeDiacritics(codenames[p].toLowerCase()) === removeDiacritics(name.toLowerCase())) {
+          return p;
+        }
+      }
+    }
+    return undefined;
+  } catch (err) {
+    return undefined;
+  }
+};
+
+/*
  * @return Object of alpha-2 codes mapped to alpha-3 codes
  */
 exports.getAlpha2Codes = function() {
@@ -200,6 +222,20 @@ exports.getAlpha2Codes = function() {
  */
 exports.getAlpha3Code = function(name, lang) {
   var alpha2 = this.getAlpha2Code(name, lang);
+  if (alpha2) {
+    return this.toAlpha3(alpha2);
+  } else {
+    return undefined;
+  }
+};
+
+/*
+ * @param name name
+ * @param lang language for country name
+ * @return ISO 3166-1 alpha-3 or undefined
+ */
+exports.getSimpleAlpha3Code = function(name, lang) {
+  var alpha2 = this.getSimpleAlpha2Code(name, lang);
   if (alpha2) {
     return this.toAlpha3(alpha2);
   } else {
@@ -226,4 +262,18 @@ exports.getNumericCodes = function() {
  */
 exports.langs = function() {
   return Object.keys(registeredLocales);
+};
+
+/*
+ * @param code ISO 3166-1 alpha-2, alpha-3 or numeric code
+ * @return Boolean
+ */
+exports.isValid = function(code) {
+  if (!code) {
+    return false;
+  }
+
+  var coerced = code.toString().toUpperCase();
+  return alpha3.hasOwnProperty(coerced) || alpha2.hasOwnProperty(coerced) ||
+    numeric.hasOwnProperty(coerced);
 };
